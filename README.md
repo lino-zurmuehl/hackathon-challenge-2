@@ -1,6 +1,3 @@
-<<<<<<< Updated upstream
-# hackathon-challenge-2
-=======
 ## Hackathon Challenge 2: The Missing Migrant Project
 ---
 
