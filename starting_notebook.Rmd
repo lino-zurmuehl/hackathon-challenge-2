@@ -3,41 +3,43 @@ title: "IOM Missing Migrants Challenge"
 output: html_document
 ---
 
-
 # IOM Missing Migrants Challenge
 
-
-This Rmd notebook should just be a starting point for you to get familiar with the data. 
-
+This Rmd notebook should just be a starting point for you to get familiar with the data.
 
 # Initial Data Loading and Inspection
+
 ```{r}
 #load your libraries here
 library(readr)
 library(dplyr)
 library(tidyverse)
 ```
+
 ```{r}
 #loading the raw data
 df_raw = read_csv('data/Missing_Migrants_Global_Figures_allData.csv')
 ```
-- Perform a basic inspection of the data using methods like head(), dim() and str() to understand the structure, types of data available, and statistical summaries.
+
+-   Perform a basic inspection of the data using methods like head(), dim() and str() to understand the structure, types of data available, and statistical summaries.
 
 ```{r}
 head(df_raw)
 ```
+
 ```{r}
 print(str(df_raw))
 ```
+
 ```{r}
 dim(df_raw)
 ```
 
-We can see that the data has 15927 rows and 25 columns. We would advise you too look into the codebook and get familiar with the different features. 
+-   We can see that the data has 15927 rows and 25 columns. We would advise you too look into the codebook and get familiar with the different features.
 
 # Data Preparation and Cleaning
 
-- The Coordinates variable has comma-separated longitudes and latitudes. The next cell separates them into 2 columns. 
+-   The Coordinates variable has comma-separated longitudes and latitudes. The next cell separates them into 2 columns.
 
 ```{r}
 df_raw = df_raw %>% 
@@ -46,14 +48,14 @@ df_raw = df_raw %>%
          lon = as.numeric(lon))
 ```
 
-- Identify and handle missing values. Decide whether to fill them with data (e.g., mean, median) or remove the rows/columns entirely.
+-   Identify and handle missing values. Decide whether to fill them with data (e.g., mean, median) or remove the rows/columns entirely.
 
 ```{r}
 colSums(is.na(df_raw))
 ```
 
-- As you can see we have some variables with a high number of missing data in some of the columns.
-- The next cell removes the columns with more than 50% missing data. Should you be interested in those columns specifically just work with the df_raw.
+-   As you can see we have some variables with a high number of missing data in some of the columns.
+-   The next cell removes the columns with more than 50% missing data. Should you be interested in those columns specifically just work with the df_raw.
 
 ```{r}
 threshold <- nrow(df_raw) * 0.5
@@ -65,26 +67,26 @@ colSums(is.na(df_clean))
 
 # Feature Engineering
 
-- Create new columns that could be useful for analysis. For example you could use outside data on countries of origin to get new features that could be useful for the analysis.
+-   Create new columns that could be useful for analysis. For example you could use outside data on countries of origin to get new features that could be useful for the analysis.
 
 # Exploratory Data Analysis (EDA)
 
- - Utilize visualizations (histograms, scatter plots, box plots) to understand distributions, relationships, and potential outliers in the data.
- - Use libraries like ggplot, shiny, and plotly to create visualizations.
+-   Utilize visualizations (histograms, scatter plots, box plots) to understand distributions, relationships, and potential outliers in the data.
+-   Use libraries like ggplot, shiny, and plotly to create visualizations.
 
 # Discussion Channels
 
-- Join the discussion on our designated Discord channels to ask questions about the challenge: https://discord.gg/2V535gBRY4
+-   Join the discussion on our designated Discord channels to ask questions about the challenge.
 
 # Ethical Considerations
 
-- Remember to handle this data responsibly. Respect the sensitivity of the information and ensure your analyses do not harm individuals or communities.
+-   Remember to handle this data responsibly. Respect the sensitivity of the information and ensure your analyses do not harm individuals or communities.
 
 # Idea Generation and Hypothesis Formation
 
-- Based on your initial findings, brainstorm potential use cases or areas of interest for further exploration. This could range from visualizing the missing migrants numbers on an interactive map to building a scraper that finds new cases on the websites featured in the dataset.
-- Formulate hypotheses or questions that you want your analysis to address.
-- Have a look at the Global Migration Data Analysis Centre and their various projects to get inspired. 
+-   Based on your initial findings, brainstorm potential use cases or areas of interest for further exploration. This could range from visualizing the missing migrants numbers on an interactive map to building a scraper that finds new cases on the websites featured in the dataset.
+-   Formulate hypotheses or questions that you want your analysis to address.
+-   Have a look at the Global Migration Data Analysis Centre and their various projects to get inspired.
 
 ```{r}
 # Now have its your turn to jump into the data! 
