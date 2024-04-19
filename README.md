@@ -10,6 +10,7 @@ This initiative is not just about data analysis; it's a call to action to harnes
 
 ### Deliverables
 - A **Jupyter Notebook** containing your analysis, visualizations, and any models or algorithms developed.
+- Or an RMD containing your analysis, visualizations, and any models or algorithms developed.
 - A **Presentation** summarizing your findings, your proposed solution(s), and their potential impact. Highlight the creativity and data-driven approach behind your project.
 
 ### Evaluation Criteria
